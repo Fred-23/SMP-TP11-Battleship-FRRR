@@ -10,11 +10,13 @@ private :
 	int posY = 0;
 	string orientation;
 	int taille = 0;
-	bool tabVie[10][10];
+	string tabVie[5];
 
 public:
-	bateau(int x, int y, int taille);
+	bateau();
+	bateau(int x, int y, int taille, string orientation);
 	void afficherCoordonnees();
+	void afficherInfoBateau();
 
 
 };
