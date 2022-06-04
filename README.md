@@ -13,20 +13,16 @@ tp-template.pdf
 
 # TO-DO LIST :
 
-'''c
-*Coding class Partie,Joueur,bateau
+```
+Implement Google test
 
-*Coding the main program
+Faire une jeux d'essais pour la prof"
 
-*Coding the graphical interface
-
-*Implement Google test
-
-*"Faire une jeux d'essais pour la prof"
-
-*Doxygen
+Doxygen
 
 *Diagramme des cas d'utilisation
 
-*CR mettre les algos et surtout expliquer les choix de conception
-'''
+CR mettre les algos 
+Expliquer les choix de conception
+
+```
