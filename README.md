@@ -14,15 +14,16 @@ tp-template.pdf
 # TO-DO LIST :
 
 ```
-Implement Google test
+  Implement Google test
 
-Faire une jeux d'essais pour la prof"
+  Faire une jeux d'essais pour la prof
 
-Doxygen
+  Doxygen
 
-*Diagramme des cas d'utilisation
+  Diagramme des cas d'utilisation
 
-CR mettre les algos 
-Expliquer les choix de conception
+  CR mettre les algos 
+  
+  Expliquer les choix de conception
 
 ```
