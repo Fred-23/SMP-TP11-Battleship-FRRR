@@ -3,7 +3,9 @@ SMP-TP11-Battleship-FRRR
 Hi, Welcome to our final project of SMP, which is a BattleShip
 
 # Replit (Draft) :
-Il nécessite de faire un ## make dans la console avant de lancer le programme
+Il nécessite de faire un 
+## make 
+dans la console avant de lancer le programme via le bouton run
 (https://replit.com/join/npttridqig-fredericalp)
 
 # Report (Google Docs) :
