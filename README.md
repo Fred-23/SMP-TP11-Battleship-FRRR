@@ -29,4 +29,4 @@ tp-template.pdf
 *Diagramme des cas d'utilisation
 
 *CR mettre les algos et surtout expliquer les choix de conception
-'''c
+'''
