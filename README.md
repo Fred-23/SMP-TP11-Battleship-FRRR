@@ -3,9 +3,6 @@ SMP-TP11-Battleship-FRRR
 Hi, Welcome to our final project of SMP, which is a BattleShip
 
 # Replit (Draft) :
-Il nécessite de faire un 
-## make 
-dans la console avant de lancer le programme via le bouton run
 (https://replit.com/join/npttridqig-fredericalp)
 
 # Report (Google Docs) :
@@ -18,9 +15,9 @@ https://docs.google.com/document/d/1RV702MYjg2eV15HHy4KW6DfOcbF0IXMHAm0cm-5HtNc/
 
 # TO-DO LIST :
 
-```
-  Trouver comment faire un make automatique et pas manuelle sur replit
-  
+
+  ~~Trouver comment faire un make automatique et pas manuelle sur replit~~
+  ```
   Corriger l'erreur de saisie de frappe 
   
   Implementer Google test sur replit
