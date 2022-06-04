@@ -10,7 +10,9 @@ Il nécessite de faire un make dans la console avant de lancer le programme
 https://docs.google.com/document/d/1RV702MYjg2eV15HHy4KW6DfOcbF0IXMHAm0cm-5HtNc/edit?usp=sharing
 
 # Here is the TP Statement :
-tp-template.pdf
+
+[tp-template.pdf](https://github.com/Fred-23/SMP-TP11-Battleship-FRRR/files/8838693/tp-template.pdf)
+
 
 # TO-DO LIST :
 
