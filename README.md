@@ -16,7 +16,7 @@ https://docs.google.com/document/d/1RV702MYjg2eV15HHy4KW6DfOcbF0IXMHAm0cm-5HtNc/
 # TO-DO LIST :
 
 
-[ ]  Trouver comment faire un make automatique et pas manuelle sur replit
+-[ ]  Trouver comment faire un make automatique et pas manuelle sur replit
 
 [ ]  Corriger l'erreur de saisie de frappe 
   
