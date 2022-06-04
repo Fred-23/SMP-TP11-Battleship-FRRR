@@ -1,2 +1,3 @@
 language = "undefined"
-run = "./machin.out"
+#run = "./machin.out"
+run = "bash run_button.sh"
