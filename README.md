@@ -2,7 +2,7 @@ SMP-TP11-Battleship-FRRR
 ## Battleship_PJR_Roman_Frederic_Romain_Robin
 Hi, Welcome to our final project of SMP, which is a BattleShip
 
-# Replit (Draft) :
+# Replit :
 (https://replit.com/join/npttridqig-fredericalp)
 
 # Report (Google Docs) :
