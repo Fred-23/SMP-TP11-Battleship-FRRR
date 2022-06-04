@@ -16,34 +16,34 @@ https://docs.google.com/document/d/1RV702MYjg2eV15HHy4KW6DfOcbF0IXMHAm0cm-5HtNc/
 # TO-DO LIST :
 
 
-- [ ]  Trouver comment faire un make automatique et pas manuelle sur replit
+- [X]  Trouver comment faire un make automatique et pas manuelle sur replit
 
-[ ]  Corriger l'erreur de saisie de frappe 
+- [ ]  Corriger l'erreur de saisie de frappe 
   
-[ ]  Implementer Google test sur replit
+- [ ]  Implementer Google test sur replit
 
-[ ]  Faire une jeux d'essais pour la prof sur replit
+- [ ]  Faire une jeux d'essais pour la prof sur replit
 
-[ ]  Doxygen sur replit
+- [ ]  Doxygen sur replit
 
-[ ]  Diagramme des cas d'utilisation
+- [ ]  Diagramme des cas d'utilisation
 
-[ ]  CR mettre les algos 
+- [ ]  CR mettre les algos 
   
-[ ]  CR Expliquer les choix de conception
+- [ ]  CR Expliquer les choix de conception
   
-[ ]  Renommer les axes du plateau
+- [ ]  Renommer les axes du plateau
    
-[ ]  Pour l'orientation mettre des lettres plus user-friendly
+- [ ]  Pour l'orientation mettre des lettres plus user-friendly
   
-[ ]  A l'initialisation le choix n'est pas proposé de jouer contre une IA ou un Joueur
+- [ ]  A l'initialisation le choix n'est pas proposé de jouer contre une IA ou un Joueur
   
-[ ]  Améliorer l'IA pour quelle touche les cases autour lors d'une bonne frappe
+- [ ]  Améliorer l'IA pour quelle touche les cases autour lors d'une bonne frappe
   
-[ ]  Test de fin de partie
+- [ ]  Test de fin de partie
   
-[ ]  Diagramme des cas d'utilisation
+- [ ]  Diagramme des cas d'utilisation
   
-[ ]  Faire un CR à la hauteur du projet
+- [ ]  Faire un CR à la hauteur du projet
 
 
