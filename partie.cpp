@@ -1,4 +1,3 @@
-#pragma once	
 #include "partie.h"
 
 
@@ -34,9 +33,9 @@ void partie::lancerTour(int tour, int typePartie)
 
 	int test = -1;
 	// -1 -> erreur
-	// 0 -> aucun bateau coulé
-	// 1 -> un bateau coulé
-	// 2-> tous les bateaux coulés
+	// 0 -> aucun bateau coulï¿½
+	// 1 -> un bateau coulï¿½
+	// 2-> tous les bateaux coulï¿½s
 
 	if (typePartie == 0) {
 		if (tour % 2 == 0) {

@@ -1,4 +1,3 @@
-#pragma once
 #include "pointAttaque.h"
 
 pointAttaque::pointAttaque()

@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include "joueur.h"
 #include "partie.h"

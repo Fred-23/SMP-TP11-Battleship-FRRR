@@ -15,7 +15,16 @@
 
 # Mono auto generated files
 mono_crash.*
-
+bateau.d
+bateau.o
+joueur.o
+joueur.d
+partie.o
+partie.d
+pointAttaque.d
+pointAttaque.o
+main.o
+machin.out
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
