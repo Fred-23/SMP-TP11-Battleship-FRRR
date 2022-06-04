@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="bateau">
+    <Position X="7.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAMAAIMAAAAQAAAgkAgAAIEABhwAAGAAA=</HashCode>
+      <FileName>bateau.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="joueur">
+    <Position X="3.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIEABAAAAAIAAASAwACAAACAAAAAACAAAAiAAAAE=</HashCode>
+      <FileName>joueur.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="humain">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAACAAACAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>joueur.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="joueurIA">
+    <Position X="2" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAFAAAAAAgAACAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>joueur.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="partie">
+    <Position X="9.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAEAAAFwAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>partie.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pointAttaque">
+    <Position X="11.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAACAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAACA=</HashCode>
+      <FileName>pointAttaque.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
