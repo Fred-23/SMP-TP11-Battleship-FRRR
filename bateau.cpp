@@ -71,37 +71,37 @@ void bateau::setTabVie(int num, int valeur) {
 }
 
 //RECEPTION SHOT
-int bateau::getShot(int x, int y) {
-
+int bateau::getShot(int y, int x) {
+    
     int resultat = PLOUF;
 
     for (int j = 0; j < this->taille; j++) {
-        if (this->orientation == OUEST) {
-            if ((this->posX == x + j) && (this->posY == y)) {
-                //touché !
+        if (this->orientation == 0) {
+            if ((this->posX == x) && (this->posY - j == y)) {
+                //touchï¿½ !
                 this->tabVie[j] = 1;
                 resultat = TOUCHE;
             }
         }
-        else if (this->orientation == NORD) {
-            if ((this->posX == x) && (this->posY == y + j)) {
-                //touché !
+        else if (this->orientation == 1) {
+            if ((this->posX == x +j ) && (this->posY == y)) {
+                //touchï¿½ !
                 this->tabVie[j] = 1;
                 resultat = TOUCHE;
             }
         }
-        else if (this->orientation == EST) {
+        else if (this->orientation == 2) {
 
-            if ((this->posX == x - j) && (this->posY == y)) {
-                //touché !
+            if ((this->posX == x) && (this->posY + j == y)) {
+                //touchï¿½ !
                 this->tabVie[j] = 1;
                 resultat = TOUCHE;
             }
         }
-        else if (this->orientation == SUD) {
+        else if (this->orientation == 3) {
 
-            if ((this->posX == x) && (this->posY == y - j)) {
-                //touché !
+            if ((this->posX - j == x) && (this->posY == y)) {
+                //touchï¿½ !
                 this->tabVie[j] = 1;
                 resultat = TOUCHE;
             }
@@ -115,10 +115,10 @@ int bateau::getShot(int x, int y) {
         std::cout << "Plouf" << endl;
     }
     else if (resultat == TOUCHE) {
-        std::cout << "Touché" << endl;
+        std::cout << "Touchï¿½" << endl;
     }
     else if (resultat == COULE) {
-        std::cout << "Coulé" << endl;
+        std::cout << "Coulï¿½" << endl;
     }
     */
 
@@ -133,7 +133,7 @@ int bateau::bateauEnVie()
         recep_vie += this->tabVie[j];
     }
     if (recep_vie == this->taille) {
-        return 1; //bateau coulé
+        return 1; //bateau coulï¿½
     }
     else
     {

@@ -24,7 +24,7 @@ void joueur::afficherBateau()
     this->contreTorpilleur2.afficherInfoBateau();
 }
 
-void joueur::defInfoBateau(bateau& objet)
+void joueur::defInfoBateau(bateau & objet)
 {
     objet.setPosX(5);
     objet.setPosY(5);
@@ -49,9 +49,9 @@ int joueur::getAttaque(pointAttaque attAtuelle)
     int etat = -1;
     // -1 -> erreur
     // 0 -> plou
-    // 1 -> bateau touché
-    // 2 -> bateau coulé
-    // 3 -> tous les bateaux coulés
+    // 1 -> bateau touchï¿½
+    // 2 -> bateau coulï¿½
+    // 3 -> tous les bateaux coulï¿½s
 
     //getShot retourne 
     // #define PLOUF 0
@@ -72,9 +72,9 @@ int joueur::getAttaque(pointAttaque attAtuelle)
         || this->croiseur.getShot(xTir, yTir) == 1
         || this->contreTorpilleur1.getShot(xTir, yTir) == 1
         || this->contreTorpilleur2.getShot(xTir, yTir) == 1) {
-
-        std::cout << "Touche" << endl;
-        etat = 1;
+            
+         std::cout << "Touche" << endl;
+         etat = 1;
     }
     else if (this->torpilleur.getShot(xTir, yTir) == 2
         || this->porteAvion.getShot(xTir, yTir) == 2
@@ -128,7 +128,7 @@ void joueur::affichage()
             tab[i][j] = " . ";
         }
     }
-
+    
     //remplissageTableau(tab[0][0], this->torpilleur, "Tor");
     string acronyme = "Tor";
     if ((this->torpilleur.getPosX() < 10) && (this->torpilleur.getPosX() >= 0)
@@ -145,11 +145,11 @@ void joueur::affichage()
                 tab[this->torpilleur.getPosX()][this->torpilleur.getPosY() + sens] = acronyme;
             }
             else if (this->torpilleur.getOrientation() == 3) {
-                tab[this->torpilleur.getPosX() - sens][this->torpilleur.getPosY() - sens] = acronyme;
+                tab[this->torpilleur.getPosX() - sens][this->torpilleur.getPosY()] = acronyme;
             }
         }
     }
-
+    
 
     //remplissageTableau(tab[0][0], this->porteAvion, "PAv");
     acronyme = "PAv";
@@ -167,12 +167,12 @@ void joueur::affichage()
                 tab[this->porteAvion.getPosX()][this->porteAvion.getPosY() + sens] = acronyme;
             }
             else if (this->porteAvion.getOrientation() == 3) {
-                tab[this->porteAvion.getPosX() - sens][this->porteAvion.getPosY() - sens] = acronyme;
+                tab[this->porteAvion.getPosX() - sens][this->porteAvion.getPosY()] = acronyme;
             }
         }
     }
 
-
+    
     //remplissageTableau(tab[0][0], this->croiseur, "Cro");
     acronyme = "Cro";
     if ((this->croiseur.getPosX() < 10) && (this->croiseur.getPosX() >= 0)
@@ -189,12 +189,12 @@ void joueur::affichage()
                 tab[this->croiseur.getPosX()][this->croiseur.getPosY() + sens] = acronyme;
             }
             else if (this->croiseur.getOrientation() == 3) {
-                tab[this->croiseur.getPosX() - sens][this->croiseur.getPosY() - sens] = acronyme;
+                tab[this->croiseur.getPosX() - sens][this->croiseur.getPosY()] = acronyme;
             }
         }
     }
 
-
+    
     //remplissageTableau(tab[0][0], this->contreTorpilleur1, "CT1");
     acronyme = "CT1";
     if ((this->contreTorpilleur1.getPosX() < 10) && (this->contreTorpilleur1.getPosX() >= 0)
@@ -211,12 +211,12 @@ void joueur::affichage()
                 tab[this->contreTorpilleur1.getPosX()][this->contreTorpilleur1.getPosY() + sens] = acronyme;
             }
             else if (this->contreTorpilleur1.getOrientation() == 3) {
-                tab[this->contreTorpilleur1.getPosX() - sens][this->contreTorpilleur1.getPosY() - sens] = acronyme;
+                tab[this->contreTorpilleur1.getPosX() - sens][this->contreTorpilleur1.getPosY()] = acronyme;
             }
         }
     }
 
-
+    
     //remplissageTableau(tab[0][0], this->contreTorpilleur2, "CT2");
     acronyme = "CT2";
     if ((this->contreTorpilleur2.getPosX() < 10) && (this->contreTorpilleur2.getPosX() >= 0)
@@ -233,12 +233,12 @@ void joueur::affichage()
                 tab[this->contreTorpilleur2.getPosX()][this->contreTorpilleur2.getPosY() + sens] = acronyme;
             }
             else if (this->contreTorpilleur2.getOrientation() == 3) {
-                tab[this->contreTorpilleur2.getPosX() - sens][this->contreTorpilleur2.getPosY() - sens] = acronyme;
+                tab[this->contreTorpilleur2.getPosX() - sens][this->contreTorpilleur2.getPosY()] = acronyme;
             }
         }
     }
 
-
+    
 
 
     std::cout << "     -------------------------------------------------------------" << endl;
@@ -255,7 +255,7 @@ void joueur::affichage()
         std::cout << "|  " << char('A' + i);
         for (int j = 0; j < 10; j++)
         {
-            std::cout << " | " << tab[i][j];
+            std::cout << " | " << tab[j][i];
         }
         std::cout << " |" << endl;
     }
@@ -264,7 +264,7 @@ void joueur::affichage()
 
 bool joueur::superpositionDesBateaux()
 {
-    if (superpositionDeuxBateaux(this->torpilleur, this->porteAvion)
+    if (superpositionDeuxBateaux(this->torpilleur, this->porteAvion) 
         || superpositionDeuxBateaux(this->torpilleur, this->croiseur)
         || superpositionDeuxBateaux(this->torpilleur, this->contreTorpilleur1)
         || superpositionDeuxBateaux(this->torpilleur, this->contreTorpilleur2)
@@ -276,67 +276,64 @@ bool joueur::superpositionDesBateaux()
         || superpositionDeuxBateaux(this->croiseur, this->contreTorpilleur1)
         || superpositionDeuxBateaux(this->croiseur, this->contreTorpilleur2)
 
-        || superpositionDeuxBateaux(this->contreTorpilleur1, this->contreTorpilleur2)) {
-
+        || superpositionDeuxBateaux(this->contreTorpilleur1, this->contreTorpilleur2)){
+        
         return true;
-    }
-    else {
+    }else {
         return false;
     }
 }
 
-bool joueur::superpositionDeuxBateaux(bateau& bat1, bateau& bat2) {
+bool joueur::superpositionDeuxBateaux(bateau & bat1, bateau & bat2) {
     bool supBat = false;
     for (int i = 0; i < bat1.getTaille(); i++) {
         if (bat1.getOrientation() == 0) {
             for (int j = 0; j < bat2.getTaille(); j++) {
                 if (bat2.getOrientation() == 0) {
-                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY() + i == bat2.getPosY() + j)) {
+                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY()+i == bat2.getPosY()+j)) {
                         supBat = true;
                     }
                 }
                 else if (bat2.getOrientation() == 1) {
-                    if ((bat1.getPosX() == bat2.getPosX() + j) && (bat1.getPosY() + i == bat2.getPosY())) {
+                    if ((bat1.getPosX() == bat2.getPosX()+j) && (bat1.getPosY() + i == bat2.getPosY())) {
                         supBat = true;
                     }
                 }
                 else if (bat2.getOrientation() == 2) {
-                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY() + i == bat2.getPosY() - j)) {
+                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY() + i == bat2.getPosY()-j)) {
                         supBat = true;
                     }
                 }
                 else if (bat2.getOrientation() == 3) {
-                    if ((bat1.getPosX() == bat2.getPosX() - j) && (bat1.getPosY() + i == bat2.getPosY())) {
+                    if ((bat1.getPosX() == bat2.getPosX()-j) && (bat1.getPosY() + i == bat2.getPosY())) {
                         supBat = true;
                     }
                 }
             }
-        }
-        else if (bat1.getOrientation() == 1) {
+        }else if (bat1.getOrientation() == 1) {
             for (int j = 0; j < bat2.getTaille(); j++) {
                 if (bat2.getOrientation() == 0) {
-                    if ((bat1.getPosX() + i == bat2.getPosX()) && (bat1.getPosY() == bat2.getPosY() + j)) {
+                    if ((bat1.getPosX()+i == bat2.getPosX()) && (bat1.getPosY() == bat2.getPosY() + j)) {
                         supBat = true;
                     }
                 }
                 else if (bat2.getOrientation() == 1) {
-                    if ((bat1.getPosX() + i == bat2.getPosX() + j) && (bat1.getPosY() == bat2.getPosY())) {
+                    if ((bat1.getPosX()+i == bat2.getPosX() + j) && (bat1.getPosY() == bat2.getPosY())) {
                         supBat = true;
                     }
                 }
                 else if (bat2.getOrientation() == 2) {
-                    if ((bat1.getPosX() + i == bat2.getPosX()) && (bat1.getPosY() + i == bat2.getPosY() - j)) {
+                    if ((bat1.getPosX()+i == bat2.getPosX()) && (bat1.getPosY() + i == bat2.getPosY() - j)) {
                         supBat = true;
                     }
                 }
                 else if (bat2.getOrientation() == 3) {
-                    if ((bat1.getPosX() + i == bat2.getPosX() - j) && (bat1.getPosY() + i == bat2.getPosY())) {
+                    if ((bat1.getPosX()+i == bat2.getPosX() - j) && (bat1.getPosY() + i == bat2.getPosY())) {
                         supBat = true;
                     }
                 }
             }
-        }
-        else if (bat1.getOrientation() == 2) {
+        }else if(bat1.getOrientation() == 2) {
             for (int j = 0; j < bat2.getTaille(); j++) {
                 if (bat2.getOrientation() == 0) {
                     if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY() - i == bat2.getPosY() + j)) {
@@ -359,16 +356,15 @@ bool joueur::superpositionDeuxBateaux(bateau& bat1, bateau& bat2) {
                     }
                 }
             }
-        }
-        else if (bat1.getOrientation() == 3) {
+        }else if (bat1.getOrientation() == 3) {
             for (int j = 0; j < bat2.getTaille(); j++) {
                 if (bat2.getOrientation() == 0) {
-                    if ((bat1.getPosX() - i == bat2.getPosX()) && (bat1.getPosY() == bat2.getPosY() + j)) {
+                    if ((bat1.getPosX() -i == bat2.getPosX()) && (bat1.getPosY() == bat2.getPosY() + j)) {
                         supBat = true;
                     }
                 }
                 else if (bat2.getOrientation() == 1) {
-                    if ((bat1.getPosX() - i == bat2.getPosX() + j) && (bat1.getPosY() == bat2.getPosY())) {
+                    if ((bat1.getPosX() -i == bat2.getPosX() + j) && (bat1.getPosY() == bat2.getPosY())) {
                         supBat = true;
                     }
                 }
@@ -399,13 +395,13 @@ int joueur::attaqueY()
 int orientationAleatoire(int pos_x, int pos_y, int taille) {
     int nbAleatoire = rand() % 4;
     int resultat;
-    if ((nbAleatoire == 0) && (pos_y + taille < 10)) {
+    if ((nbAleatoire == 0) && (pos_y - taille > 0)){
         resultat = nbAleatoire;
     }
     else if ((nbAleatoire == 1) && (pos_x + taille < 10)) {
         resultat = nbAleatoire;
     }
-    else if ((nbAleatoire == 2) && (pos_y - taille > 0)) {
+    else if ((nbAleatoire == 2) && (pos_y + taille < 10)) {
         resultat = nbAleatoire;
     }
     else if ((nbAleatoire == 3) && (pos_x - taille > 0)) {
@@ -417,7 +413,7 @@ int orientationAleatoire(int pos_x, int pos_y, int taille) {
     return resultat;
 }
 
-void joueurIA::defInfoBateau(bateau& objet)
+void joueurIA::defInfoBateau(bateau & objet)
 {
     objet.setPosX(rand() % 10);
     objet.setPosY(rand() % 10);
@@ -446,7 +442,7 @@ pointAttaque joueurIA::attaqueXY() {
     pointAttaque attaqueActuelle(xTir, yTir);
     bool tirDifferent = true;
 
-    for (int i = 0; i < this->shoots.size(); i++)
+    for (int i = 0; i < this->shoots.size() ; i++)
     {
         if (this->shoots[i].getPointX() == xTir && this->shoots[i].getPointY() == yTir) {
             if (this->shoots.size() <= 100) {
@@ -455,15 +451,15 @@ pointAttaque joueurIA::attaqueXY() {
             else {
                 std::cout << "Le plateau a ete crible dans son entierete" << endl;
             }
-        }
+        } 
     }
     if (tirDifferent == false)
     {
         attaqueActuelle = attaqueXY();
     }
-
+    
     this->shoots.push_back(attaqueActuelle);
-
+    
     return attaqueActuelle;
 }
 
@@ -477,22 +473,31 @@ int getConsole(string message) {
     return data;
 }
 
+int getConsoleChar(string message) {
+    char data;
+    std::cout << message;
+    std::cin >> data;
+    //std::cout << data << endl;
+    return data;
+}
+
 int getVarPosX() {
-    int posX = getConsole("posX = ");
+    int posX = int(getConsoleChar("Colonne = ")-'0');
     if (not((0 <= posX) and (posX <= 9))) {
-        std::cout << "Erreur l'abscisse saisie n'est pas comprise entre 0 et 9 inclus" << endl;
+        std::cout << "Erreur la colonne saisie n'est pas comprise entre 0 et 9 inclus" << endl;
         posX = getVarPosX();
     }
     return posX;
 }
 
 int getVarPosY() {
-    int posY = getConsole("posY = ");
-    if (not((0 <= posY) and (posY <= 9))) {
-        std::cout << "Erreur l'ordonnee saisie n'est pas comprise entre 0 et 9 inclus" << endl;
+    char posY = getConsoleChar("Ligne = ");
+    if (not(('a' <= posY) and (posY <= 'j'))) {
+        std::cout << "Erreur la ligne saisie n'est pas comprise entre a et j inclus" << endl;
+
         posY = getVarPosY();
     }
-    return posY;
+    return int(posY - 'a');
 }
 
 int getOrientation() {
@@ -508,17 +513,16 @@ int getOrientation() {
     return orientation;
 }
 
-void humain::defInfoBateau(bateau& objet)
+void humain::defInfoBateau(bateau & objet)
 {
-    objet.setPosX(getVarPosX());
     objet.setPosY(getVarPosY());
-
+    objet.setPosX(getVarPosX());
+    
     int resultat = getOrientation();
     if ((resultat == 0) && (objet.getPosY() - objet.getTaille() > 0)) {
         objet.setOrientation(resultat);
     }
     else if ((resultat == 1) && (objet.getPosX() + objet.getTaille() < 10)) {
-        std::cout << "2" << endl;
         objet.setOrientation(resultat);
     }
     else if ((resultat == 2) && (objet.getPosY() + objet.getTaille() < 10)) {
@@ -526,9 +530,9 @@ void humain::defInfoBateau(bateau& objet)
     }
     else if ((resultat == 3) && (objet.getPosX() - objet.getTaille() > 0)) {
         objet.setOrientation(resultat);
-    }
-    else {
+    }else {
         std::cout << "Erreur, ton bateau sort du plateau" << endl;
+        std::cout << "Replace le" << endl;
         defInfoBateau(objet);
     }
 
@@ -536,12 +540,12 @@ void humain::defInfoBateau(bateau& objet)
         objet.setTabVie(i, 0);
     }
 
-    if (superpositionDesBateaux())
+    if(superpositionDesBateaux())
     {
         std::cout << endl << "Erreur, ton bateau se superpose a un autre bateau" << endl;
         this->defInfoBateau(objet);
     }
-
+    
 }
 
 void humain::defInfoBateaux() {
@@ -552,7 +556,7 @@ void humain::defInfoBateaux() {
     std::cout << endl << " --- Porte Avion --- " << endl;
     this->defInfoBateau(this->porteAvion);
     affichage();
-
+    
     std::cout << endl << " --- Croiseur --- " << endl;
     this->defInfoBateau(this->croiseur);
     affichage();
@@ -574,20 +578,11 @@ void humain::defInfoBateaux() {
 
 int humain::attaqueX()
 {
-    int xTir = getConsole("x du tir = ");
-    if (not((0 <= xTir) and (xTir <= 9))) {
-        std::cout << "Erreur l'abscisse du tir saisie n'est pas comprise entre 0 et 9 inclus" << endl;
-        xTir = this->attaqueX();
-    }
-    return xTir;
+    std::cout << "A toi de tirer" << endl;
+    return getVarPosY();
 }
 
 int humain::attaqueY()
 {
-    int yTir = getConsole("y du tir = ");
-    if (not((0 <= yTir) and (yTir <= 9))) {
-        std::cout << "Erreur l'ordonnee du tir saisie n'est pas comprise entre 0 et 9 inclus" << endl;
-        yTir = this->attaqueY();
-    }
-    return yTir;
+    return getVarPosX();
 }

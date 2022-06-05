@@ -81,7 +81,7 @@ void partie::lancerTour(int tour, int typePartie)
 	}
 
 
-
+	
 	tour++;
 
 	if (test == 0) {
@@ -99,11 +99,16 @@ void partie::lancerTour(int tour, int typePartie)
 	else if (test == 3) {
 		//tous les bateaux ont ete coules
 		std::cout << "--- Fin de partie ---" << endl;
-		//MESSAGE DE FIN DE PARTIE x joueur a gagne...
+		if (tour % 2 == 0) {
+			std::cout << "Le joueur 1 a gagne" << endl;
+		}
+		else {
+			std::cout << "Le joueur 2 a gagne" << endl;
+		}
 	}
 	else {
 		std::cout << "Erreur de programmation -> Fin de partie" << endl;
 	}
-
+	
 }
 

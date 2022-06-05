@@ -25,6 +25,8 @@ pointAttaque.d
 pointAttaque.o
 main.o
 machin.out
+prog
+/googletest
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
