@@ -6,6 +6,8 @@ Hi, Welcome to our final project of SMP, which is a BattleShip
 (https://replit.com/join/npttridqig-fredericalp)
 
 # Report (Google Docs) :
+[CR_Robin_Frédéric_Roman_Romain_SEC2024.pdf](https://github.com/Fred-23/SMP-TP11-Battleship-FRRR/files/8840962/CR_Robin_Frederic_Roman_Romain_SEC2024.pdf)
+
 https://docs.google.com/document/d/1RV702MYjg2eV15HHy4KW6DfOcbF0IXMHAm0cm-5HtNc/edit?usp=sharing
 
 # Here is the TP Statement :
