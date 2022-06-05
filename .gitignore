@@ -26,6 +26,7 @@ pointAttaque.o
 main.o
 machin.out
 prog
+.breakpoints
 /googletest
 # Build results
 [Dd]ebug/

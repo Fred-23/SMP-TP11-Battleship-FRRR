@@ -1,5 +1,6 @@
 #include "bateau.h"
 #include <gtest/gtest.h>
+
 //#include "googletest/googletest/include/gtest/gtest.h"
 TEST(getShotTest,Plouf) {
         bateau b1;
