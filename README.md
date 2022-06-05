@@ -23,7 +23,7 @@ https://docs.google.com/document/d/1RV702MYjg2eV15HHy4KW6DfOcbF0IXMHAm0cm-5HtNc/
   
 - [X]  Implementer Google test sur replit
 
-- [X]  Faire une jeux d'essais pour la prof sur replit
+- [X]  Faire une jeux d'essais pour les enseignants sur replit
 
 - [X]  Doxygen sur replit
 
