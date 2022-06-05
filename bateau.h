@@ -2,11 +2,13 @@
 #include <string>
 #include <iostream>
 
+//Constante pour la variable orientation
 #define NORD 0
 #define SUD 1
 #define EST 2
 #define OUEST 3
 
+//Constante pour la variable resultat
 #define PLOUF 0
 #define TOUCHE 1
 #define COULE 2
@@ -23,8 +25,11 @@ private:
 	int tabVie[5] = { 0 };
 
 public:
+//constructeur
 	bateau();
 	bateau(int x, int y, int taille, int orientation);
+
+//methodes d'utilisations
 	void afficherCoordonnees();
 	void afficherInfoBateau();
 	int getShot(int x, int y);

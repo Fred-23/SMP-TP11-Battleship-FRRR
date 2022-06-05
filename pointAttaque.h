@@ -1,6 +1,7 @@
 #pragma once
 #include <random>
 
+//Défintion de la classe PointAttaque  avec les parties proteges et publiques
 class pointAttaque {
 protected:
     int pointX = 0;

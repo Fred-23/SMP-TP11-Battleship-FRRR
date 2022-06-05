@@ -1,5 +1,5 @@
 SMP-TP11-Battleship-FRRR
-## Battleship_PJR_Roman_Frederic_Romain_Robin
+## Battleship_PJR_Roman_Frederic_Romain_Robin (SEC 2024)
 Hi, Welcome to our final project of SMP, which is a BattleShip
 
 # Replit :
@@ -15,23 +15,23 @@ https://docs.google.com/document/d/1RV702MYjg2eV15HHy4KW6DfOcbF0IXMHAm0cm-5HtNc/
 
 # TO-DO LIST :
 
-- [ ]  Commenter le code REPLIT
+- [X]  Commenter le code REPLIT
 
 - [X]  Trouver comment faire un make automatique et pas manuelle sur replit
 
-- [ ]  Corriger l'erreur de saisie de frappe 
+- [X]  Corriger l'erreur de saisie de frappe 
   
 - [X]  Implementer Google test sur replit
 
-- [ ]  Faire une jeux d'essais pour la prof sur replit
+- [X]  Faire une jeux d'essais pour la prof sur replit
 
 - [X]  Doxygen sur replit
 
 - [X]  Diagramme des cas d'utilisation
 
-- [ ]  CR mettre les algos 
+- [X]  CR mettre l'algorithme
   
-- [ ]  CR Expliquer les choix de conception
+- [X]  CR Expliquer les choix de conception
   
 - [X]  Renommer les axes du plateau
    
@@ -39,10 +39,10 @@ https://docs.google.com/document/d/1RV702MYjg2eV15HHy4KW6DfOcbF0IXMHAm0cm-5HtNc/
   
 - [X]  A l'initialisation le choix n'est pas proposé de jouer contre une IA ou un Joueur
   
-- [ ]  Améliorer l'IA pour quelle touche les cases autour lors d'une bonne frappe
+- [X]  Améliorer l'IA pour quelle touche les cases autour lors d'une bonne frappe
   
 - [X]  Test de fin de partie
   
-- [ ]  Faire un CR à la hauteur du projet
+- [X]  Faire un beau CR à la hauteur du projet
 
 

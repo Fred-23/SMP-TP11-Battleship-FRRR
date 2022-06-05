@@ -1,11 +1,3 @@
-GTEST_DIR = ./googletest/googletest
-GTEST_LIB = ./googletest/lib
-
-CPP_FLAGS = -isystem $(GTEST_DIR)/include  -g -Wall -Wextra -pthread -std=c++11
-
-GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
-                $(GTEST_DIR)/include/gtest/internal/*.h
-
 prog : main.o bateau.o joueur.o partie.o pointAttaque.o 
 	g++ -o prog main.o bateau.o joueur.o partie.o pointAttaque.o
 

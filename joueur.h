@@ -16,17 +16,21 @@ protected:
     bateau contreTorpilleur2; // taille 3
 
 public:
+    // constructeur : 
     joueur();
-    void afficherBateau();
+
+    void afficherBateau(); //affichage des noms des bateaux
     void defInfoBateau(bateau& objet);
     void defInfoBateaux();
     int getAttaque(pointAttaque attActuelle);
     int attaqueX();
     int attaqueY();
     bool superpositionDesBateaux();
-    bool superpositionDeuxBateaux(bateau& bat1, bateau& bat2);
+    bool superpositionDeuxBateaux(bateau& bat1, bateau& bat2); //vérification que deux bateaux ne se superposent pas
     void affichage();
 };
+
+// ----- Classes Filles : --------
 
 class humain : public joueur {
 protected:

@@ -1,5 +1,7 @@
 #include "bateau.h"
 
+
+//Ce constructeur est utilisé pour sortir le bateau du plateau et indiqué une erreur
 bateau::bateau()
 {
     this->posX = -99;
@@ -12,12 +14,15 @@ bateau::bateau()
     }
 }
 
+//Constructeur par défaut initialisiant les valeurs selon les entrées
 bateau::bateau(int x, int y, int taille, int orientation) {
     this->posX = x;
     this->posY = y;
     this->taille = taille;
     this->orientation = orientation;
 }
+
+//Méthode d'affichages des coordonnées et des informations du bateau
 
 void bateau::afficherCoordonnees()
 {
@@ -71,44 +76,45 @@ void bateau::setTabVie(int num, int valeur) {
 }
 
 //RECEPTION SHOT
+//Méthode traitant la réception d'un tir en fonction de ses positions
 int bateau::getShot(int y, int x) {
     
-    int resultat = PLOUF;
+    int resultat = PLOUF;//initialisation d'un shot à loupé = PLOUF
 
-    for (int j = 0; j < this->taille; j++) {
-        if (this->orientation == 0) {
-            if ((this->posX == x) && (this->posY - j == y)) {
-                //touch� !
+    for (int j = 0; j < this->taille; j++) {//on regarde sur la dimension total du bateau
+        if (this->orientation == NORD) {
+            if ((this->posX == x) && (this->posY - j == y)) {// on trouve x position NORD on cherche y
+                //touché !
                 this->tabVie[j] = 1;
                 resultat = TOUCHE;
             }
         }
-        else if (this->orientation == 1) {
-            if ((this->posX == x +j ) && (this->posY == y)) {
-                //touch� !
+        else if (this->orientation == SUD) {
+            if ((this->posX == x +j ) && (this->posY == y)) {// on trouve y position SUD on cherche x
+                //touché !
                 this->tabVie[j] = 1;
                 resultat = TOUCHE;
             }
         }
-        else if (this->orientation == 2) {
+        else if (this->orientation == EST) {
 
-            if ((this->posX == x) && (this->posY + j == y)) {
-                //touch� !
+            if ((this->posX == x) && (this->posY + j == y)) {// on trouve x position EST on cherche y
+                //touché !
                 this->tabVie[j] = 1;
                 resultat = TOUCHE;
             }
         }
-        else if (this->orientation == 3) {
+        else if (this->orientation == OUEST) {// on trouve y position OUEST on cherche x
 
             if ((this->posX - j == x) && (this->posY == y)) {
-                //touch� !
+                //touché !
                 this->tabVie[j] = 1;
                 resultat = TOUCHE;
             }
         }
     }
 
-    if (resultat == TOUCHE && this->bateauEnVie()) resultat = COULE;
+    if (resultat == TOUCHE && this->bateauEnVie()) resultat = COULE; // on regarde la vie du bateau et les touchés
 
     /*
     if (resultat == PLOUF) {
@@ -122,17 +128,19 @@ int bateau::getShot(int y, int x) {
     }
     */
 
-    return resultat;
+    return resultat;   //On retourne le résultat qui est soit PLOUF (Aucun contact) ou TOUCHE ou COULE
 
 }
 
+//Cette méthode nous permet d'évaluer l'état de santé d'un bateau
 int bateau::bateauEnVie()
 {
     int recep_vie = 0;
+  //Balayage du bateau
     for (int j = 0; j < this->taille; j++) {
         recep_vie += this->tabVie[j];
     }
-    if (recep_vie == this->taille) {
+    if (recep_vie == this->taille) {//test ve du bateau
         return 1; //bateau coul�
     }
     else

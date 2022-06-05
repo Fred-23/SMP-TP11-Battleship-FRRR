@@ -3,6 +3,8 @@
 
 joueur::joueur()
 {
+
+    //Pour parametrer les différents bateaux on a décidé de leur attribué différentes tailles
     this->torpilleur.setTaille(2); // taille 2
     this->porteAvion.setTaille(5); // taille 5
     this->croiseur.setTaille(4); // taille 4
@@ -10,7 +12,7 @@ joueur::joueur()
     this->contreTorpilleur2.setTaille(3); // taille 3
 }
 
-void joueur::afficherBateau()
+void joueur::afficherBateau() //affichage des noms des bateaux
 {
     cout << "### Torpilleur ###" << endl;
     this->torpilleur.afficherInfoBateau();
@@ -30,11 +32,12 @@ void joueur::defInfoBateau(bateau & objet)
     objet.setPosY(5);
     objet.setOrientation(OUEST);
     for (int i = 0; i < 5; i++) {
-        objet.setTabVie(i, 0);
+        objet.setTabVie(i, 0);//initialisation des points de vie à 0, chaque touche transforme en '1'
     }
 }
 
 void joueur::defInfoBateaux() {
+  //different type de bateaux de chaque joueur
     this->defInfoBateau(this->torpilleur);
     this->defInfoBateau(this->porteAvion);
     this->defInfoBateau(this->croiseur);
@@ -133,18 +136,18 @@ void joueur::affichage()
     string acronyme = "Tor";
     if ((this->torpilleur.getPosX() < 10) && (this->torpilleur.getPosX() >= 0)
         && (this->torpilleur.getPosY() < 10) && (this->torpilleur.getPosY() >= 0)
-        ) {
+        ) { //si les coordonnées ne dépassent pas les limites du plateau
         for (int sens = 0; sens < this->torpilleur.getTaille(); sens++) {
-            if (this->torpilleur.getOrientation() == 0) {
+            if (this->torpilleur.getOrientation() == 0) { //vérification orientation, si orientation vers le nord
                 tab[this->torpilleur.getPosX()][this->torpilleur.getPosY() - sens] = acronyme;
             }
-            else if (this->torpilleur.getOrientation() == 1) {
+            else if (this->torpilleur.getOrientation() == 1) { //vérification orientation, si orientation vers le sud
                 tab[this->torpilleur.getPosX() + sens][this->torpilleur.getPosY()] = acronyme;
             }
-            else if (this->torpilleur.getOrientation() == 2) {
+            else if (this->torpilleur.getOrientation() == 2) { //vérification orientation, si orientation vers l'est
                 tab[this->torpilleur.getPosX()][this->torpilleur.getPosY() + sens] = acronyme;
             }
-            else if (this->torpilleur.getOrientation() == 3) {
+            else if (this->torpilleur.getOrientation() == 3) { //vérification orientation, si orientation vers l'ouest
                 tab[this->torpilleur.getPosX() - sens][this->torpilleur.getPosY()] = acronyme;
             }
         }
@@ -155,18 +158,18 @@ void joueur::affichage()
     acronyme = "PAv";
     if ((this->porteAvion.getPosX() < 10) && (this->porteAvion.getPosX() >= 0)
         && (this->porteAvion.getPosY() < 10) && (this->porteAvion.getPosY() >= 0)
-        ) {
-        for (int sens = 0; sens < this->porteAvion.getTaille(); sens++) {
-            if (this->porteAvion.getOrientation() == 0) {
+        ) { //si les coordonnées ne dépassent pas les limites du plateau
+        for (int sens = 0; sens < this->porteAvion.getTaille(); sens++) { 
+            if (this->porteAvion.getOrientation() == 0) { //vérification orientation, si orientation vers le nord
                 tab[this->porteAvion.getPosX()][this->porteAvion.getPosY() - sens] = acronyme;
             }
-            else if (this->porteAvion.getOrientation() == 1) {
+            else if (this->porteAvion.getOrientation() == 1) { //vérification orientation, si orientation vers le sud
                 tab[this->porteAvion.getPosX() + sens][this->porteAvion.getPosY()] = acronyme;
             }
-            else if (this->porteAvion.getOrientation() == 2) {
+            else if (this->porteAvion.getOrientation() == 2) { //vérification orientation, si orientation vers l'est
                 tab[this->porteAvion.getPosX()][this->porteAvion.getPosY() + sens] = acronyme;
             }
-            else if (this->porteAvion.getOrientation() == 3) {
+            else if (this->porteAvion.getOrientation() == 3) { //vérification orientation, si orientation vers l'ouest
                 tab[this->porteAvion.getPosX() - sens][this->porteAvion.getPosY()] = acronyme;
             }
         }
@@ -177,18 +180,18 @@ void joueur::affichage()
     acronyme = "Cro";
     if ((this->croiseur.getPosX() < 10) && (this->croiseur.getPosX() >= 0)
         && (this->croiseur.getPosY() < 10) && (this->croiseur.getPosY() >= 0)
-        ) {
+        ) { //si les coordonnées ne dépassent pas les limites du plateau
         for (int sens = 0; sens < this->croiseur.getTaille(); sens++) {
-            if (this->croiseur.getOrientation() == 0) {
+            if (this->croiseur.getOrientation() == 0) { //vérification orientation, si orientation vers le nord
                 tab[this->croiseur.getPosX()][this->croiseur.getPosY() - sens] = acronyme;
             }
-            else if (this->croiseur.getOrientation() == 1) {
+            else if (this->croiseur.getOrientation() == 1) { //vérification orientation, si orientation vers le sud
                 tab[this->croiseur.getPosX() + sens][this->croiseur.getPosY()] = acronyme;
             }
-            else if (this->croiseur.getOrientation() == 2) {
+            else if (this->croiseur.getOrientation() == 2) { //vérification orientation, si orientation vers l'est
                 tab[this->croiseur.getPosX()][this->croiseur.getPosY() + sens] = acronyme;
             }
-            else if (this->croiseur.getOrientation() == 3) {
+            else if (this->croiseur.getOrientation() == 3) { //vérification orientation, si orientation vers l'ouest
                 tab[this->croiseur.getPosX() - sens][this->croiseur.getPosY()] = acronyme;
             }
         }
@@ -199,18 +202,18 @@ void joueur::affichage()
     acronyme = "CT1";
     if ((this->contreTorpilleur1.getPosX() < 10) && (this->contreTorpilleur1.getPosX() >= 0)
         && (this->contreTorpilleur1.getPosY() < 10) && (this->contreTorpilleur1.getPosY() >= 0)
-        ) {
+        ) { //si les coordonnées ne dépassent pas les limites du plateau
         for (int sens = 0; sens < this->contreTorpilleur1.getTaille(); sens++) {
-            if (this->contreTorpilleur1.getOrientation() == 0) {
+            if (this->contreTorpilleur1.getOrientation() == 0) { //vérification orientation, si orientation vers le nord
                 tab[this->contreTorpilleur1.getPosX()][this->contreTorpilleur1.getPosY() - sens] = acronyme;
             }
-            else if (this->contreTorpilleur1.getOrientation() == 1) {
+            else if (this->contreTorpilleur1.getOrientation() == 1) { //vérification orientation, si orientation vers le sud
                 tab[this->contreTorpilleur1.getPosX() + sens][this->contreTorpilleur1.getPosY()] = acronyme;
             }
-            else if (this->contreTorpilleur1.getOrientation() == 2) {
+            else if (this->contreTorpilleur1.getOrientation() == 2) { //vérification orientation, si orientation vers l'est
                 tab[this->contreTorpilleur1.getPosX()][this->contreTorpilleur1.getPosY() + sens] = acronyme;
             }
-            else if (this->contreTorpilleur1.getOrientation() == 3) {
+            else if (this->contreTorpilleur1.getOrientation() == 3) { //vérification orientation, si orientation vers l'ouest
                 tab[this->contreTorpilleur1.getPosX() - sens][this->contreTorpilleur1.getPosY()] = acronyme;
             }
         }
@@ -221,18 +224,18 @@ void joueur::affichage()
     acronyme = "CT2";
     if ((this->contreTorpilleur2.getPosX() < 10) && (this->contreTorpilleur2.getPosX() >= 0)
         && (this->contreTorpilleur2.getPosY() < 10) && (this->contreTorpilleur2.getPosY() >= 0)
-        ) {
+        ) { //si les coordonnées ne dépassent pas les limites du plateau
         for (int sens = 0; sens < this->contreTorpilleur2.getTaille(); sens++) {
-            if (this->contreTorpilleur2.getOrientation() == 0) {
+            if (this->contreTorpilleur2.getOrientation() == 0) { //vérification orientation, si orientation vers le nord
                 tab[this->contreTorpilleur2.getPosX()][this->contreTorpilleur2.getPosY() - sens] = acronyme;
             }
-            else if (this->contreTorpilleur2.getOrientation() == 1) {
+            else if (this->contreTorpilleur2.getOrientation() == 1) { //vérification orientation, si orientation vers le sud
                 tab[this->contreTorpilleur2.getPosX() + sens][this->contreTorpilleur2.getPosY()] = acronyme;
             }
-            else if (this->contreTorpilleur2.getOrientation() == 2) {
+            else if (this->contreTorpilleur2.getOrientation() == 2) { //vérification orientation, si orientation vers l'est
                 tab[this->contreTorpilleur2.getPosX()][this->contreTorpilleur2.getPosY() + sens] = acronyme;
             }
-            else if (this->contreTorpilleur2.getOrientation() == 3) {
+            else if (this->contreTorpilleur2.getOrientation() == 3) { //vérification orientation, si orientation vers l'ouest
                 tab[this->contreTorpilleur2.getPosX() - sens][this->contreTorpilleur2.getPosY()] = acronyme;
             }
         }
@@ -249,8 +252,9 @@ void joueur::affichage()
     }
     std::cout << "  |" << endl;
 
+    
     for (int i = 0; i < 10; i++)
-    {
+    { // affichage du quadrillage du plateau
         std::cout << "------------------------------------------------------------------" << endl;
         std::cout << "|  " << char('A' + i);
         for (int j = 0; j < 10; j++)
@@ -276,7 +280,7 @@ bool joueur::superpositionDesBateaux()
         || superpositionDeuxBateaux(this->croiseur, this->contreTorpilleur1)
         || superpositionDeuxBateaux(this->croiseur, this->contreTorpilleur2)
 
-        || superpositionDeuxBateaux(this->contreTorpilleur1, this->contreTorpilleur2)){
+        || superpositionDeuxBateaux(this->contreTorpilleur1, this->contreTorpilleur2)){ //vérification de toutes les combinaisons de superpositions de bateaux possibles
         
         return true;
     }else {
@@ -284,96 +288,96 @@ bool joueur::superpositionDesBateaux()
     }
 }
 
-bool joueur::superpositionDeuxBateaux(bateau & bat1, bateau & bat2) {
+bool joueur::superpositionDeuxBateaux(bateau & bat1, bateau & bat2) { //vérification que deux bateaux ne se superposent pas
     bool supBat = false;
     for (int i = 0; i < bat1.getTaille(); i++) {
-        if (bat1.getOrientation() == 0) {
+        if (bat1.getOrientation() == 0) { //vérification orientation, si orientation vers le nord
             for (int j = 0; j < bat2.getTaille(); j++) {
-                if (bat2.getOrientation() == 0) {
-                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY()+i == bat2.getPosY()+j)) {
+                if (bat2.getOrientation() == 0) { //vérification orientation, si orientation vers le nord
+                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY() - i == bat2.getPosY()-j)) {
                         supBat = true;
                     }
                 }
-                else if (bat2.getOrientation() == 1) {
-                    if ((bat1.getPosX() == bat2.getPosX()+j) && (bat1.getPosY() + i == bat2.getPosY())) {
+                else if (bat2.getOrientation() == 1) { //vérification orientation, si orientation vers le sud
+                    if ((bat1.getPosX() == bat2.getPosX()+j) && (bat1.getPosY() - i == bat2.getPosY())) {
                         supBat = true;
                     }
                 }
-                else if (bat2.getOrientation() == 2) {
-                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY() + i == bat2.getPosY()-j)) {
+                else if (bat2.getOrientation() == 2) { //vérification orientation, si orientation vers l'est
+                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY() - i == bat2.getPosY()+j)) {
                         supBat = true;
                     }
                 }
-                else if (bat2.getOrientation() == 3) {
-                    if ((bat1.getPosX() == bat2.getPosX()-j) && (bat1.getPosY() + i == bat2.getPosY())) {
+                else if (bat2.getOrientation() == 3) { //vérification orientation, si orientation vers l'ouest
+                    if ((bat1.getPosX() == bat2.getPosX()-j) && (bat1.getPosY() - i == bat2.getPosY())) {
                         supBat = true;
                     }
                 }
             }
-        }else if (bat1.getOrientation() == 1) {
+        }else if (bat1.getOrientation() == 1) { //vérification orientation, si orientation vers le sud
             for (int j = 0; j < bat2.getTaille(); j++) {
-                if (bat2.getOrientation() == 0) {
-                    if ((bat1.getPosX()+i == bat2.getPosX()) && (bat1.getPosY() == bat2.getPosY() + j)) {
+                if (bat2.getOrientation() == 0) { //vérification orientation, si orientation vers le nord
+                    if ((bat1.getPosX()+i == bat2.getPosX()) && (bat1.getPosY() == bat2.getPosY() - j)) {
                         supBat = true;
                     }
                 }
-                else if (bat2.getOrientation() == 1) {
+                else if (bat2.getOrientation() == 1) { //vérification orientation, si orientation vers le sud
                     if ((bat1.getPosX()+i == bat2.getPosX() + j) && (bat1.getPosY() == bat2.getPosY())) {
                         supBat = true;
                     }
                 }
-                else if (bat2.getOrientation() == 2) {
-                    if ((bat1.getPosX()+i == bat2.getPosX()) && (bat1.getPosY() + i == bat2.getPosY() - j)) {
+                else if (bat2.getOrientation() == 2) { //vérification orientation, si orientation vers l'est
+                    if ((bat1.getPosX()+i == bat2.getPosX()) && (bat1.getPosY() == bat2.getPosY() + j)) {
                         supBat = true;
                     }
                 }
-                else if (bat2.getOrientation() == 3) {
-                    if ((bat1.getPosX()+i == bat2.getPosX() - j) && (bat1.getPosY() + i == bat2.getPosY())) {
-                        supBat = true;
-                    }
-                }
-            }
-        }else if(bat1.getOrientation() == 2) {
-            for (int j = 0; j < bat2.getTaille(); j++) {
-                if (bat2.getOrientation() == 0) {
-                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY() - i == bat2.getPosY() + j)) {
-                        supBat = true;
-                    }
-                }
-                else if (bat2.getOrientation() == 1) {
-                    if ((bat1.getPosX() == bat2.getPosX() + j) && (bat1.getPosY() - i == bat2.getPosY())) {
-                        supBat = true;
-                    }
-                }
-                else if (bat2.getOrientation() == 2) {
-                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY() - i == bat2.getPosY() - j)) {
-                        supBat = true;
-                    }
-                }
-                else if (bat2.getOrientation() == 3) {
-                    if ((bat1.getPosX() == bat2.getPosX() - j) && (bat1.getPosY() - i == bat2.getPosY())) {
+                else if (bat2.getOrientation() == 3) { //vérification orientation, si orientation vers l'ouest
+                    if ((bat1.getPosX()+i == bat2.getPosX() - j) && (bat1.getPosY() == bat2.getPosY())) {
                         supBat = true;
                     }
                 }
             }
-        }else if (bat1.getOrientation() == 3) {
+        }else if(bat1.getOrientation() == 2) { //vérification orientation, si orientation vers l'est
             for (int j = 0; j < bat2.getTaille(); j++) {
-                if (bat2.getOrientation() == 0) {
-                    if ((bat1.getPosX() -i == bat2.getPosX()) && (bat1.getPosY() == bat2.getPosY() + j)) {
+                if (bat2.getOrientation() == 0) { //vérification orientation, si orientation vers le nord
+                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY() + i == bat2.getPosY() - j)) {
                         supBat = true;
                     }
                 }
-                else if (bat2.getOrientation() == 1) {
+                else if (bat2.getOrientation() == 1) { //vérification orientation, si orientation vers le sud
+                    if ((bat1.getPosX() == bat2.getPosX() + j) && (bat1.getPosY() + i == bat2.getPosY())) {
+                        supBat = true;
+                    }
+                }
+                else if (bat2.getOrientation() == 2) { //vérification orientation, si orientation vers l'est
+                    if ((bat1.getPosX() == bat2.getPosX()) && (bat1.getPosY() + i == bat2.getPosY() + j)) {
+                        supBat = true;
+                    }
+                }
+                else if (bat2.getOrientation() == 3) { //vérification orientation, si orientation vers l'ouest
+                    if ((bat1.getPosX() == bat2.getPosX() - j) && (bat1.getPosY() + i == bat2.getPosY())) {
+                        supBat = true;
+                    }
+                }
+            }
+        }else if (bat1.getOrientation() == 3) { //vérification orientation, si orientation vers l'ouest
+            for (int j = 0; j < bat2.getTaille(); j++) {
+                if (bat2.getOrientation() == 0) { //vérification orientation, si orientation vers le nord
+                    if ((bat1.getPosX() -i == bat2.getPosX()) && (bat1.getPosY() == bat2.getPosY() - j)) {
+                        supBat = true;
+                    }
+                }
+                else if (bat2.getOrientation() == 1) { //vérification orientation, si orientation vers le sud
                     if ((bat1.getPosX() -i == bat2.getPosX() + j) && (bat1.getPosY() == bat2.getPosY())) {
                         supBat = true;
                     }
                 }
-                else if (bat2.getOrientation() == 2) {
-                    if ((bat1.getPosX() - i == bat2.getPosX()) && (bat1.getPosY() == bat2.getPosY() - j)) {
+                else if (bat2.getOrientation() == 2) { //vérification orientation, si orientation vers l'est
+                    if ((bat1.getPosX() - i == bat2.getPosX()) && (bat1.getPosY() == bat2.getPosY() + j)) {
                         supBat = true;
                     }
                 }
-                else if (bat2.getOrientation() == 3) {
+                else if (bat2.getOrientation() == 3) { //vérification orientation, si orientation vers l'ouest
                     if ((bat1.getPosX() - i == bat2.getPosX() - j) && (bat1.getPosY() == bat2.getPosY())) {
                         supBat = true;
                     }
@@ -392,7 +396,7 @@ int joueur::attaqueY()
 
 // ### classe JOUEURIA ###
 
-int orientationAleatoire(int pos_x, int pos_y, int taille) {
+int orientationAleatoire(int pos_x, int pos_y, int taille) { // génération d'une orientation aléatoire
     int nbAleatoire = rand() % 4;
     int resultat;
     if ((nbAleatoire == 0) && (pos_y - taille > 0)){
@@ -415,8 +419,8 @@ int orientationAleatoire(int pos_x, int pos_y, int taille) {
 
 void joueurIA::defInfoBateau(bateau & objet)
 {
-    objet.setPosX(rand() % 10);
-    objet.setPosY(rand() % 10);
+    objet.setPosX(rand() % 10); // abscisse aléatoire
+    objet.setPosY(rand() % 10); // ordonnée aléatoire
     objet.setOrientation(orientationAleatoire(objet.getPosX(), objet.getPosY(), objet.getTaille()));
 
     for (int i = 0; i < 5; i++) {
@@ -437,8 +441,8 @@ void joueurIA::defInfoBateaux() {
 }
 
 pointAttaque joueurIA::attaqueXY() {
-    int xTir = rand() % 10;
-    int yTir = rand() % 10;
+    int xTir = rand() % 10; // abscisse aléatoire
+    int yTir = rand() % 10; // ordonnée aléatoire
     pointAttaque attaqueActuelle(xTir, yTir);
     bool tirDifferent = true;
 
@@ -448,7 +452,7 @@ pointAttaque joueurIA::attaqueXY() {
             if (this->shoots.size() <= 100) {
                 tirDifferent = false;
             }
-            else {
+            else { //les tirs ont couverts toute la surface du plateau
                 std::cout << "Le plateau a ete crible dans son entierete" << endl;
             }
         } 
@@ -465,7 +469,7 @@ pointAttaque joueurIA::attaqueXY() {
 
 // ### classe HUMAIN ###
 
-int getConsole(string message) {
+int getConsole(string message) { //saisie clavier string
     int data;
     std::cout << message;
     std::cin >> data;
@@ -473,7 +477,7 @@ int getConsole(string message) {
     return data;
 }
 
-int getConsoleChar(string message) {
+int getConsoleChar(string message) { //saisie clavier char
     char data;
     std::cout << message;
     std::cin >> data;
@@ -483,7 +487,7 @@ int getConsoleChar(string message) {
 
 int getVarPosX() {
     int posX = int(getConsoleChar("Colonne = ")-'0');
-    if (not((0 <= posX) and (posX <= 9))) {
+    if (not((0 <= posX) and (posX <= 9))) { //si l'abscisse ne dépasse pas les limites du plateau
         std::cout << "Erreur la colonne saisie n'est pas comprise entre 0 et 9 inclus" << endl;
         posX = getVarPosX();
     }
@@ -492,23 +496,27 @@ int getVarPosX() {
 
 int getVarPosY() {
     char posY = getConsoleChar("Ligne = ");
-    if (not(('a' <= posY) and (posY <= 'j'))) {
+    if (not(('a' <= posY) and (posY <= 'j'))) { //si l'oordonnée ne dépasse pas les limites du plateau
         std::cout << "Erreur la ligne saisie n'est pas comprise entre a et j inclus" << endl;
 
         posY = getVarPosY();
     }
-    return int(posY - 'a');
+    return int(posY - 'a'); 
 }
 
 int getOrientation() {
-    int orientation = getConsole("orientation = ");
-    if (not((0 <= orientation) and (orientation <= 3))) {
+    std::cout << "Orientation NORD = 0" << endl;
+    std::cout << "Orientation EST = 1" << endl;
+    std::cout << "Orientation SUD = 2" << endl;
+    std::cout << "Orientation OUEST = 3" << endl;
+    int orientation = getConsole("orientation = "); //saisie de l'orientation
+    if (not((0 <= orientation) and (orientation <= 3))) { //si l'orientation saisie ne se trouve pas entre 0 et 3
         std::cout << "Erreur l'orientation saisie n'est pas comprise entre 0 et 3 inclus" << endl;
         std::cout << "Orientation NORD = 0" << endl;
         std::cout << "Orientation EST = 1" << endl;
         std::cout << "Orientation SUD = 2" << endl;
         std::cout << "Orientation OUEST = 3" << endl;
-        orientation = getOrientation();
+        orientation = getOrientation(); //relancer la méthode par récursivité
     }
     return orientation;
 }
@@ -518,7 +526,7 @@ void humain::defInfoBateau(bateau & objet)
     objet.setPosY(getVarPosY());
     objet.setPosX(getVarPosX());
     
-    int resultat = getOrientation();
+    int resultat = getOrientation(); // saisie de l'orientation 
     if ((resultat == 0) && (objet.getPosY() - objet.getTaille() > 0)) {
         objet.setOrientation(resultat);
     }
@@ -548,7 +556,7 @@ void humain::defInfoBateau(bateau & objet)
     
 }
 
-void humain::defInfoBateaux() {
+void humain::defInfoBateaux() { //initialisation des bateaux
     std::cout << " --- Torpilleur --- " << endl;
     this->defInfoBateau(this->torpilleur);
     affichage();
@@ -576,7 +584,7 @@ void humain::defInfoBateaux() {
 }
 
 
-int humain::attaqueX()
+int humain::attaqueX() 
 {
     std::cout << "A toi de tirer" << endl;
     return getVarPosY();
